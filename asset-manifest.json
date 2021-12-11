@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/identity-forms/static/css/main.6fd3b295.chunk.css",
+    "main.js": "/identity-forms/static/js/main.41cb0db9.chunk.js",
+    "main.js.map": "/identity-forms/static/js/main.41cb0db9.chunk.js.map",
+    "runtime-main.js": "/identity-forms/static/js/runtime-main.7020601c.js",
+    "runtime-main.js.map": "/identity-forms/static/js/runtime-main.7020601c.js.map",
+    "static/js/2.5579efdc.chunk.js": "/identity-forms/static/js/2.5579efdc.chunk.js",
+    "static/js/2.5579efdc.chunk.js.map": "/identity-forms/static/js/2.5579efdc.chunk.js.map",
+    "static/js/3.75525a1c.chunk.js": "/identity-forms/static/js/3.75525a1c.chunk.js",
+    "static/js/3.75525a1c.chunk.js.map": "/identity-forms/static/js/3.75525a1c.chunk.js.map",
+    "index.html": "/identity-forms/index.html",
+    "static/css/main.6fd3b295.chunk.css.map": "/identity-forms/static/css/main.6fd3b295.chunk.css.map",
+    "static/js/2.5579efdc.chunk.js.LICENSE.txt": "/identity-forms/static/js/2.5579efdc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7020601c.js",
+    "static/js/2.5579efdc.chunk.js",
+    "static/css/main.6fd3b295.chunk.css",
+    "static/js/main.41cb0db9.chunk.js"
+  ]
+}
