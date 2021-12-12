@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { AppBar, IconButton, Toolbar, Typography, Container } from '@material-ui/core';
+import About from './About';
+import Names from './Names';
+import Genders from './Genders';
+import Sources from './Sources';
 
 type PageState = 'about' | 'names' | 'genders' | 'sources';
 
@@ -19,32 +23,8 @@ function Bar(props: { onChangePage: (state: PageState) => void }) {
     );
 }
 
-function About() {
-    return (
-        <p>About page</p>
-    );
-}
-
-function Names() {
-    return (
-        <p>Names page</p>
-    );
-}
-
-function Genders() {
-    return (
-        <p>Genders page</p>
-    );
-}
-
-function Sources() {
-    return (
-        <p>Sources page</p>
-    );
-}
-
 export default function App(props: {}) {
-    const [pageState, setPageState] = useState<PageState>('about');
+    const [pageState, setPageState] = useState<PageState>('genders'); // TODO: change to 'about'
 
     const currentPage = {
         'about': About,
@@ -56,7 +36,7 @@ export default function App(props: {}) {
     return (
         <>
             <Bar onChangePage={(newPageState) => setPageState(newPageState)} />
-            <Container maxWidth="xl">
+            <Container maxWidth="md">
                 {currentPage}
             </Container>
         </>
