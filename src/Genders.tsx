@@ -44,14 +44,6 @@ export default function Genders(props: {}) {
         <>
             <h2 className="page-header">Genders</h2>
 
-            <p className="page-text">
-                Suspendisse id gravida nunc. Pellentesque eu pellentesque quam, vel vehicula ipsum. Etiam eleifend orci sit amet vehicula condimentum. Vivamus sed pulvinar nulla. Pellentesque sit amet arcu aliquam, rhoncus elit vitae, rhoncus risus. Suspendisse rutrum commodo condimentum. Sed ornare leo nec augue tempor venenatis sit amet id erat.
-            </p>
-
-            <p className="page-text">
-                Aliquam maximus nunc eget lorem maximus mattis. In mollis lorem erat. Cras ut est sed arcu lacinia venenatis ac in augue. Quisque convallis massa eu ullamcorper scelerisque. Duis egestas, quam at dapibus vestibulum, sapien ex interdum risus, vel ultricies est sem sed erat. Sed erat nisi, maximus at porta vel, blandit nec ipsum. Aenean id ipsum mollis, lobortis nunc mollis, pharetra sapien. Nunc ac congue augue. Sed tristique mi ac quam finibus pharetra. Donec non hendrerit mi. Sed fermentum nisl dapibus, euismod orci sed, blandit nibh.
-            </p>
-
             <FormCard title="Title" subheader="Subheader">
                 <BinaryDropdownForm />
             </FormCard>
