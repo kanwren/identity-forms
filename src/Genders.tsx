@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FormControl, Select, MenuItem, InputLabel, Button } from '@material-ui/core';
+import { FormControl, Select, MenuItem, InputLabel } from '@material-ui/core';
 import { FormCard, SubmitButton, ResetButton } from './Common';
 
 function BinaryDropdownForm() {
@@ -39,7 +39,7 @@ function BinaryDropdownForm() {
     }
 }
 
-export default function Genders() {
+export default function Genders(props: {}) {
     return (
         <>
             <p className="page-text">
