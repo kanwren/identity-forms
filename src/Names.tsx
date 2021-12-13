@@ -1,5 +1,9 @@
 export default function Names(props: {}) {
     return (
-        <p>Names page</p>
+        <>
+            <h2 className="page-header">Names</h2>
+
+            <p className="page-text">Names page</p>
+        </>
     );
 }

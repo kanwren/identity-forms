@@ -42,6 +42,8 @@ function BinaryDropdownForm() {
 export default function Genders(props: {}) {
     return (
         <>
+            <h2 className="page-header">Genders</h2>
+
             <p className="page-text">
                 Suspendisse id gravida nunc. Pellentesque eu pellentesque quam, vel vehicula ipsum. Etiam eleifend orci sit amet vehicula condimentum. Vivamus sed pulvinar nulla. Pellentesque sit amet arcu aliquam, rhoncus elit vitae, rhoncus risus. Suspendisse rutrum commodo condimentum. Sed ornare leo nec augue tempor venenatis sit amet id erat.
             </p>
