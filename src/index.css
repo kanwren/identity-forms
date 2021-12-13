@@ -17,7 +17,7 @@ code {
 }
 
 .page-header {
-  color: gray;
+  font-weight: bold;
 }
 
 .submit-button {
