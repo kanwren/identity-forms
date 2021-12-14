@@ -3,7 +3,7 @@ import { Card, CardHeader, CardContent, Button } from '@material-ui/core';
 
 export function FormCard(props: React.PropsWithChildren<{
     title: string,
-    subheader: string,
+    subheader?: string,
 }>) {
     return (
         <>

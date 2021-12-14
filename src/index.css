@@ -28,3 +28,9 @@ code {
 .form-card-header {
   padding-bottom: 0px;
 }
+
+.form-control {
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+  min-width: 150px !important;
+}
