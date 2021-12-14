@@ -1,44 +1,51 @@
 import { AppBar, IconButton, Toolbar, Typography, Container } from '@material-ui/core';
-import { redirectToPage, Page } from './Page';
 import About from './About';
 import Names from './Names';
 import Genders from './Genders';
 import Sources from './Sources';
+import { BrowserRouter, Route, Routes, Link, Navigate } from 'react-router-dom';
 
-function Bar(props: { changePage: (page: Page) => void }) {
+function Bar() {
     return (
         <AppBar position="static">
             <Toolbar>
                 <Typography variant="h5" style={{ flexGrow: 1 }}>
                     Identity Forms
                 </Typography>
-                <IconButton color="inherit" onClick={() => props.changePage('about')}>About</IconButton>
-                <IconButton color="inherit" onClick={() => props.changePage('names')}>Names</IconButton>
-                <IconButton color="inherit" onClick={() => props.changePage('genders')}>Genders</IconButton>
-                <IconButton color="inherit" onClick={() => props.changePage('sources')}>Sources</IconButton>
+                <IconButton color="inherit" component={Link} to="/about">About</IconButton>
+                <IconButton color="inherit" component={Link} to="/names">Names</IconButton>
+                <IconButton color="inherit" component={Link} to="/genders">Genders</IconButton>
+                <IconButton color="inherit" component={Link} to="/sources">Sources</IconButton>
             </Toolbar>
         </AppBar>
     );
 }
 
-export default function App(props: { page: Page | undefined; }) {
-    const changePage: (state: Page) => void = (newPage) => redirectToPage(newPage);
-
-    const page = props.page ?? 'about';
-
-    const currentPage = {
-        'about': About,
-        'names': Names,
-        'genders': Genders,
-        'sources': Sources,
-    }[page]({ changePage });
-
+function Page(props: { children: JSX.Element }) {
     return (
         <>
-            <Bar changePage={changePage} />
+            <Bar />
             <Container maxWidth="md">
-                {currentPage}
+                {props.children}
             </Container>
+        </>
+    );
+}
+
+export default function App() {
+    const url = `${process.env.PUBLIC_URL}`;
+    return (
+        <>
+            <BrowserRouter basename={url}>
+                <Routes>
+                    <Route path="/" element={<Navigate to="/about"/>} />
+                    <Route path="/about" element={<Page><About/></Page>} />
+                    <Route path="/names" element={<Page><Names/></Page>} />
+                    <Route path="/genders" element={<Page><Genders/></Page>} />
+                    <Route path="/sources" element={<Page><Sources/></Page>} />
+                    <Route path="*" element={<Navigate to="/about"/>} />
+                </Routes>
+            </BrowserRouter>
         </>
     );
 }
