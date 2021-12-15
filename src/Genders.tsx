@@ -549,6 +549,15 @@ export default function Genders() {
 
             <p className="page-text">There is no single best solution to collecting information on a user's gender. For example, on a dating site, having categories in a form may be preferable to a free-form text input, so that users may filter according to their preferences. In comparison, on a social media site, it may be more desirable for users to express their gender with fewer limitations.</p>
 
+            <p className="page-text"></p>
+
+            <div style={{ margin: "auto", justifyContent: "center", alignItems: "center" }}>
+                <figure style={{ margin: "auto", textAlign: "center" }}>
+                    <img src={`${process.env.PUBLIC_URL}/fb.gif`} alt="A demonstration of changing your gender with Facebook. The cursor selects a dropdown with options 'Female', 'Male', or 'Custom', selects 'Custom', and enters 'Gender Fluid' in a typeahead dialogue." />
+                    <figcaption><i>Instead of an open text box, Facebook's gender input system includes a tag-based system with a multitude of options, which can be selected via an alphabetically-sorted typeahead box.</i></figcaption>
+                </figure>
+            </div>
+
             <p className="page-text">Instead, when designing forms for inputting gender (and user data in general), we should ask ourselves the following questions:</p>
 
             <ul className="page-text">
