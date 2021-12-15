@@ -76,6 +76,15 @@ export const requireNoSpace: Validator = (input: string) => {
     return ok(undefined);
 }
 
+// NOTE: regex borrowed from Devise library
+// this is not the correct way to validate emails, but it's good enough for demonstration purposes
+export const requireEmail: Validator = (input: string) => {
+    if (/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i.test(input)) {
+        return ok(undefined);
+    }
+    return err("Invalid email");
+}
+
 export function all(validators: NonEmpty<(input: string) => Result<string, undefined>>): Validator {
     return (input: string) => {
         let res = validators[0](input);

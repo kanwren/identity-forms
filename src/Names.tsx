@@ -254,6 +254,7 @@ function MultipleNamesForm() {
                             label="Family names/surnames"
                             variant="filled"
                             onChange={(event) => setSurname(event.target.value as string)}
+                            style={{ minWidth: "20em" }}
                         />
                     </FormControl>
                     <FormControl className="form-control" style={{ display: "block" }}>
@@ -261,6 +262,7 @@ function MultipleNamesForm() {
                             label="Other/given names"
                             variant="filled"
                             onChange={(event) => setGivenName(event.target.value as string)}
+                            style={{ minWidth: "20em" }}
                         />
                     </FormControl>
                 </div>
@@ -306,6 +308,7 @@ function SingleFieldNameForm() {
                             variant="filled"
                             helperText={nameErr}
                             onChange={(event) => setName(event.target.value as string)}
+                            style={{ minWidth: "20em" }}
                         />
                     </FormControl>
                 </div>
@@ -349,6 +352,7 @@ function NoUnicodeForm() {
                             variant="filled"
                             helperText={nameErr}
                             onChange={(event) => setName(event.target.value as string)}
+                            style={{ minWidth: "20em" }}
                         />
                     </FormControl>
                 </div>
@@ -392,6 +396,7 @@ function CharacterValidationForm() {
                             variant="filled"
                             helperText={nameErr}
                             onChange={(event) => setName(event.target.value as string)}
+                            style={{ minWidth: "20em" }}
                         />
                     </FormControl>
                 </div>
@@ -437,6 +442,7 @@ function LengthValidationForm() {
                             variant="filled"
                             helperText={nameErr}
                             onChange={(event) => setName(event.target.value as string)}
+                            style={{ minWidth: "20em" }}
                         />
                     </FormControl>
                 </div>
@@ -480,6 +486,7 @@ function IdealForm() {
                             variant="filled"
                             helperText={nameErr ?? "Your full legal name"}
                             onChange={(event) => setName(event.target.value as string)}
+                            style={{ minWidth: "20em" }}
                         />
                     </FormControl>
                     <FormControl className="form-control" style={{ display: "block" }}>
@@ -490,6 +497,7 @@ function IdealForm() {
                             variant="filled"
                             helperText={preferredErr ?? "How you'd like us to refer to you in communications"}
                             onChange={(event) => setPreferred(event.target.value as string)}
+                            style={{ minWidth: "20em" }}
                         />
                     </FormControl>
                 </div>

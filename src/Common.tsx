@@ -27,9 +27,7 @@ export function SubmitButton(props: {
             color="primary"
             variant="contained"
             disabled={props.disabled}
-            onClick={(_event) => {
-                props.onClick();
-            }}
+            onClick={(_event) => props.onClick()}
         >
             Submit
         </Button>
@@ -44,7 +42,7 @@ export function ResetButton(props: {
             className="submit-button"
             color="secondary"
             variant="outlined"
-            onClick={(_event) => { props.onClick(); }}
+            onClick={(_event) => props.onClick()}
         >
             Reset
         </Button>
