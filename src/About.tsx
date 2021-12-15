@@ -16,7 +16,7 @@ export default function About() {
 
             <p className="page-text">This website addresses the collection of two critical types of user data: names and genders. To get started, navigate to the <Link component={RLink} to="/names">Names</Link> or <Link component={RLink} to="/genders">Genders</Link> page in the bar above.</p>
 
-            <p className="page-text"><b>NOTE</b>: the forms in each page are for demonstration only, and do not collect any information. At times, minimal validation is run over the contents for demonstrative purposes, but this is done locally; no service ever receives this information.</p>
+            <p className="page-text">Throughout the pages, there will be several example forms. Readers are encouraged to test out the forms, as they may show additional content once completed. Note that the forms in each page are for demonstration only, and do not collect any information. At times, minimal validation is run over the contents for demonstrative purposes, but this is done locally; no service ever receives this information.</p>
 
             <h2 className="page-header">Reading</h2>
 
