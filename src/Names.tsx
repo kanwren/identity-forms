@@ -322,8 +322,6 @@ function SingleFieldNameForm() {
             <>
                 <p>The name you entered was: <b>{name}</b></p>
 
-                <p>TODO</p>
-
                 <ResetButton onClick={() => {
                     setSubmitted(false);
                     setName(undefined);
