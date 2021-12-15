@@ -523,13 +523,13 @@ function IdealForm() {
 export default function Names(props: {}) {
     return (
         <>
-            <h2 className="page-header">Names</h2>
+            <h2 className="page-header" id="names">Names</h2>
 
             <p className="page-text">Names are beautiful, unique, complicated things. They can be used to identify and to show respect, to include and to exclude. With this in mind, it is important to keep in mind the different kinds of names we may encounter.</p>
 
             <p className="page-text">It's natural that programmers in a country such as the United States will be made up mostly of people with fairly "standard" "American" names. For most Americans, this means having a first and last name, as well as perhaps a middle name, and maybe a title. It's tempting to base user data off of this standard, and dismiss any names outside of this norm as being too "weird", or simply unlikely to occur in your use case. However, even within the United States, we can find plenty of scenarios that challenge these assumptions. Behind these edge cases are real people with real names, and being unable to input one's name can be an obstacle to accessing important services.</p>
 
-            <h3 className="page-header">Internationalization</h3>
+            <h3 className="page-header" id="internationalization">Internationalization</h3>
 
             <p className="page-text">In the United States, the most common name format is a first name and a last name, with potentially a middle name and title. One might expect to see a form like this:</p> 
 
@@ -572,7 +572,7 @@ export default function Names(props: {}) {
                 <SingleFieldNameForm />
             </FormCard>
 
-            <h3 className="page-header">Validation</h3>
+            <h3 className="page-header" id="validation">Validation</h3>
 
             <p className="page-text">Okay, so we've changed our first and last name boxes into a single textbox. We should be able to handle everyone's name now, right?</p>
 
@@ -617,7 +617,7 @@ export default function Names(props: {}) {
 
             <p className="page-text">To put maximum character limits into perspective, most names in Japanese consist of 4 or fewer kanji, and so forms in Japan are designed around this expectation. Meanwhile, most American surnames contain five to seven characters; imagine a Jordan Smith attempting to type in their name and encountering a limit of 10 characters!</p>
 
-            <h3 className="page-header">Solutions</h3>
+            <h3 className="page-header" id="solutions">Solutions</h3>
 
             <p className="page-text">The most practical solution is a single Unicode text field, or if collecting surnames is necessary, two fields for surnames and given names. However, because some may not want others to address them by their given name, it is best to ask directly:</p>
 

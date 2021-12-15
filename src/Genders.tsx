@@ -472,7 +472,7 @@ function TextboxGender() {
 export default function Genders() {
     return (
         <>
-            <h2 className="page-header">Genders</h2>
+            <h2 className="page-header" id="genders">Genders</h2>
 
             <p className="page-text">It goes without question that gender is present in many aspects of society. It influences our identities, social groups, and interactions. In Western culture, the traditional Western binary view of gender identities is deeply integrated into society, culture, and infrastructure, despite increasing visibility of marginalized gender identities, such as nonbinary people. As a result, transgender, nonbinary, and intersex individuals often face many difficulties when interacting with systems working under traditional expectations of binary gender and sex.</p>
             <p className="page-text">Furthermore, even with increasing visibility of marginalized gender identities, those with marginalized gender identities are often grouped together. In reality, nonbinary individuals often have different needs than binary transgender individuals, who are often not entirely barred by systems expecting a binary gender.</p>
@@ -545,7 +545,7 @@ export default function Genders() {
                 <TextboxGender />
             </FormCard>
 
-            <h3 className="page-header">Solution</h3>
+            <h3 className="page-header" id="solutions">Solutions</h3>
 
             <p className="page-text">There is no single best solution to collecting information on a user's gender. For example, on a dating site, having categories in a form may be preferable to a free-form text input, so that users may filter according to their preferences. In comparison, on a social media site, it may be more desirable for users to express their gender with fewer limitations.</p>
 
