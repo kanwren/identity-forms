@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FormControl, Select, MenuItem, InputLabel, TextField, FormGroup, FormControlLabel, Checkbox, FormHelperText, FormLabel } from '@material-ui/core';
+import { FormControl, Select, MenuItem, InputLabel, TextField, FormGroup, FormControlLabel, Checkbox, FormHelperText, FormLabel, RadioGroup, Radio, Link } from '@material-ui/core';
 import { FormCard, SubmitButton, ResetButton } from './Common';
 import { all, anyMissing, requireEmail, requireNonempty, requirePred, validate } from './Validators';
 
@@ -320,25 +320,12 @@ function BetterCheckboxes() {
     const [explanation, setExplanation] = useState<string | undefined>(undefined);
     const [genderChanged, setGenderChanged] = useState(false);
 
-    const alignments = ['cis', 'trans', 'questioning', 'opt-out'] as const;
-    type AlignmentBox = typeof alignments[number];
-    type AlignmentOptions = { [k in AlignmentBox]: boolean };
-    const [isAlignmentChecked, setIsAlignmentChecked] = useState<AlignmentOptions>({
-        'cis': false,
-        'trans': false,
-        'questioning': false,
-        'opt-out': false,
-    });
-    const [alignmentChanged, setAlignmentChanged] = useState(false);
+    type Alignment = 'cis' | 'trans' | 'questioning' | 'opt-out';
+    const [alignment, setAlignment] = useState<Alignment | undefined>(undefined);
 
     function setGender(option: GenderBox, checked: boolean) {
         setGenderChanged(true);
         setIsGenderChecked(cur => ({ ...cur, [option]: checked }));
-    }
-
-    function setAlignment(option: AlignmentBox, checked: boolean) {
-        setAlignmentChanged(true);
-        setIsAlignmentChecked(cur => ({ ...cur, [option]: checked }));
     }
 
     function reset() {
@@ -354,19 +341,12 @@ function BetterCheckboxes() {
             'questioning': false,
             'opt-out': false,
         })
-        setAlignmentChanged(false);
-        setIsAlignmentChecked({
-            'cis': false,
-            'trans': false,
-            'questioning': false,
-            'opt-out': false,
-        });
+        setAlignment(undefined);
     }
 
     const noGenderChecked = genders.every(k => !isGenderChecked[k]);
-    const noAlignmentChecked = alignments.every(k => !isAlignmentChecked[k]);
+    const noAlignmentChecked = alignment === undefined;
     const genderCheckboxErr = noGenderChecked && genderChanged ? "Check at least one" : undefined;
-    const alignmentCheckboxErr = noAlignmentChecked && alignmentChanged ? "Check at least one" : undefined;
     const explanationErr = validate(requireNonempty, explanation);
     const isDisabled = noGenderChecked || noAlignmentChecked || (explanationEnabled && anyMissing([explanation, explanationErr]));
 
@@ -423,24 +403,15 @@ function BetterCheckboxes() {
                 </div>
 
                 <div>
-                    <FormControl required error={alignmentCheckboxErr !== undefined} className="form-control" style={{ display: "block", marginBottom: "10px" }}>
+                    <FormControl required component="fieldset" className="form-control" style={{ display: "block", marginBottom: "10px" }}>
                         <FormLabel component="legend">Gender Alignment</FormLabel>
-                        <FormGroup className="form-control">
-                            <FormControlLabel label="Cisgender" control={<Checkbox onChange={(event) => {
-                                setAlignment("cis", event.target.checked);
-                            }} />} />
-                            <FormControlLabel label="Transgender" control={<Checkbox onChange={(event) => {
-                                setAlignment("trans", event.target.checked);
-                            }} />} />
-                            <FormControlLabel label="Unsure/questioning" control={<Checkbox onChange={(event) => {
-                                setAlignment("questioning", event.target.checked);
-                            }} />} />
-                            <FormControlLabel label="Prefer not to answer" control={<Checkbox onChange={(event) => {
-                                setAlignment("opt-out", event.target.checked);
-                            }} />} />
-                        </FormGroup>
+                        <RadioGroup className="form-control" onChange={(event) => setAlignment(event.target.value as Alignment)}>
+                            <FormControlLabel label="Cisgender" value="cis" control={<Radio />} />
+                            <FormControlLabel label="Transgender" value="trans" control={<Radio />} />
+                            <FormControlLabel label="Unsure/questioning" value="questioning" control={<Radio />} />
+                            <FormControlLabel label="Prefer not to answer" value="opt-out" control={<Radio />} />
+                        </RadioGroup>
                     </FormControl>
-                    {alignmentCheckboxErr !== undefined ? <FormHelperText error>{alignmentCheckboxErr}</FormHelperText> : undefined}
                 </div>
                 <SubmitButton disabled={isDisabled} onClick={() => setSubmitted(true)} />
             </>
@@ -485,7 +456,7 @@ function TextboxGender() {
     } else {
         return (
             <>
-                <p>In a study, both binary and nonbinary participants rated this kind of form to be the most inclusive, least misgendering, and most comfortable to fill out. The second most well-received form was one similar to the one above.</p>
+                <p><Link href="https://dl.acm.org/doi/10.1145/3411764.3445742">A study found</Link> that both binary and nonbinary participants rated this kind of form to be the most inclusive, least misgendering, and most comfortable to fill out. The second most well-received form was one similar to the one above.</p>
 
                 <p>However, the agreement was not unanimous. Which form do you prefer? Would you personally prefer to have discrete categories, or an open text box?</p>
 
@@ -593,10 +564,4 @@ export default function Genders() {
             <p className="page-text">Finally, if gender is not actually necessary for an application or service, then the easiest and most effective solution is simply to not ask for it in the first place.</p>
         </>
     );
-
-    //   - why does this have transgender options but not cisgender options?
-    //   - don't use the terms mtf and ftm
-    //   - better revision: woman/female, man/male, non-binary, not listed above (open text box), unsure/questioning, prefer not to answer
-    //     - if being trans is relevant, have a separate question for cis, trans, unsure/questioning, prefer not to answer
-    // - open text box (least misgendered and most inclusive, but more uncomfortable)
 }
