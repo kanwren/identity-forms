@@ -12,7 +12,7 @@ function FirstAndLastForm() {
     const firstNameErr = validate(all([requireNonempty, requireNoSpace]), firstName);
     const middleNameErr = validate(all([requireNoSpace]), middleName);
     const lastNameErr = validate(all([requireNonempty, requireNoSpace]), lastName);
-    const isDisabled = anyMissing([[firstName, firstNameErr], [middleName, middleNameErr], [lastName, lastNameErr]]);
+    const isDisabled = anyMissing([firstName, firstNameErr], [middleName, middleNameErr], [lastName, lastNameErr]);
 
     if (!submitted) {
         return (
@@ -91,7 +91,7 @@ function GivenAndSurnameForm() {
     const givenNameErr = validate(all([requireNonempty, requireNoSpace]), givenName);
     const middleNameErr = validate(all([requireNoSpace]), middleName);
     const surnameErr = validate(all([requireNonempty, requireNoSpace]), surname);
-    const isDisabled = anyMissing([[givenName, givenNameErr], [middleName, middleNameErr], [surname, surnameErr]]);
+    const isDisabled = anyMissing([givenName, givenNameErr], [middleName, middleNameErr], [surname, surnameErr]);
 
     if (!submitted) {
         return (
@@ -171,7 +171,7 @@ function PrefixesForm() {
 
     const givenNameErr = validate(all([requireNonempty]), givenName);
     const surnameErr = validate(all([requireNonempty]), surname);
-    const isDisabled = anyMissing([[givenName, givenNameErr], [surname, surnameErr]]);
+    const isDisabled = anyMissing([givenName, givenNameErr], [surname, surnameErr]);
 
     if (!submitted) {
         return (
@@ -243,7 +243,7 @@ function MultipleNamesForm() {
 
     const givenNameErr = validate(all([requireNonempty]), givenName);
     const surnameErr = validate(all([requireNonempty]), surname);
-    const isDisabled = allMissing([[givenName, givenNameErr], [surname, surnameErr]]);
+    const isDisabled = allMissing([givenName, givenNameErr], [surname, surnameErr]);
 
     if (!submitted) {
         return (
@@ -294,7 +294,7 @@ function SingleFieldNameForm() {
     const [name, setName] = useState<string | undefined>(undefined);
 
     const nameErr = validate(all([requireNonempty]), name);
-    const isDisabled = anyMissing([[name, nameErr]]);
+    const isDisabled = anyMissing([name, nameErr]);
 
     if (!submitted) {
         return (
@@ -338,7 +338,7 @@ function NoUnicodeForm() {
     const [name, setName] = useState<string | undefined>(undefined);
 
     const nameErr = validate(all([requireNonempty, requireAscii]), name);
-    const isDisabled = anyMissing([[name, nameErr]])
+    const isDisabled = anyMissing([name, nameErr])
 
     if (!submitted) {
         return (
@@ -382,7 +382,7 @@ function CharacterValidationForm() {
     const [name, setName] = useState<string | undefined>(undefined);
 
     const nameErr = validate(all([requireNonempty, requireLetters]), name);
-    const isDisabled = anyMissing([[name, nameErr]])
+    const isDisabled = anyMissing([name, nameErr])
 
     if (!submitted) {
         return (
@@ -428,7 +428,7 @@ function LengthValidationForm() {
     const [name, setName] = useState<string | undefined>(undefined);
 
     const nameErr = validate(all([requireNonempty, requireLength(3, 30)]), name);
-    const isDisabled = anyMissing([[name, nameErr]])
+    const isDisabled = anyMissing([name, nameErr])
 
     if (!submitted) {
         return (
@@ -472,7 +472,7 @@ function IdealForm() {
 
     const nameErr = validate(all([requireNonempty]), name);
     const preferredErr = validate(all([requireNonempty]), preferred);
-    const isDisabled = anyMissing([[name, nameErr], [preferred, preferredErr]])
+    const isDisabled = anyMissing([name, nameErr], [preferred, preferredErr])
 
     if (!submitted) {
         return (

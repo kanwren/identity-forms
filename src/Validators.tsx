@@ -85,7 +85,7 @@ export const requireEmail: Validator = (input: string) => {
     return err("Invalid email");
 }
 
-export function all(validators: NonEmpty<(input: string) => Result<string, undefined>>): Validator {
+export function all(validators: NonEmpty<Validator>): Validator {
     return (input: string) => {
         let res = validators[0](input);
         if (res._tag === "err") {
@@ -109,7 +109,7 @@ export function validate(validator: Validator, input: string | undefined): strin
     }
 }
 
-export function anyMissing(results: ([string | undefined, string | undefined])[]): boolean {
+export function anyMissing(...results: ([string | undefined, string | undefined])[]): boolean {
     for (const [input, e] of results) {
         if (input === undefined || e !== undefined) {
             return true;
@@ -118,7 +118,7 @@ export function anyMissing(results: ([string | undefined, string | undefined])[]
     return false;
 }
 
-export function allMissing(results: ([string | undefined, string | undefined])[]): boolean {
+export function allMissing(...results: ([string | undefined, string | undefined])[]): boolean {
     for (const [input, e] of results) {
         if (input !== undefined && e === undefined) {
             return false;

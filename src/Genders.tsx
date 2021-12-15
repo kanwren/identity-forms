@@ -13,7 +13,7 @@ function SampleForm() {
     const nameErr = validate(requireNonempty, name);
     const usernameErr = validate(all([requireNonempty, requirePred((c) => /[a-zA-Z0-9_-]/.test(c))]), username);
     const emailErr = validate(all([requireNonempty, requireEmail]), email);
-    const isDisabled = gender === '' || anyMissing([[name, nameErr], [email, emailErr]]);
+    const isDisabled = gender === '' || anyMissing([name, nameErr], [email, emailErr]);
 
     if (!submitted) {
         return (
