@@ -59,8 +59,8 @@ function SampleForm() {
                             onChange={(event) => setGender(event.target.value as string)}
                             style={{ minWidth: "10em" }}
                         >
-                            <MenuItem value={"male"}>Male</MenuItem>
                             <MenuItem value={"female"}>Female</MenuItem>
+                            <MenuItem value={"male"}>Male</MenuItem>
                         </Select>
                     </FormControl>
                 </div>
@@ -107,8 +107,8 @@ function BinaryDropdownWithOptOut() {
                             onChange={(event) => setGender(event.target.value as string)}
                             style={{ minWidth: "10em" }}
                         >
-                            <MenuItem value={"male"}>Male</MenuItem>
                             <MenuItem value={"female"}>Female</MenuItem>
+                            <MenuItem value={"male"}>Male</MenuItem>
                             <MenuItem value={"other"}>Other</MenuItem>
                             <MenuItem value={"opt-out"}>Prefer not to say</MenuItem>
                         </Select>
@@ -159,8 +159,8 @@ function BinaryDropdownWithOptOutAndField() {
                             }}
                             style={{ minWidth: "10em" }}
                         >
-                            <MenuItem value={"male"}>Male</MenuItem>
                             <MenuItem value={"female"}>Female</MenuItem>
+                            <MenuItem value={"male"}>Male</MenuItem>
                             <MenuItem value={"other"}>Other</MenuItem>
                             <MenuItem value={"opt-out"}>Prefer not to say</MenuItem>
                         </Select>
@@ -245,17 +245,17 @@ function BadCheckboxes() {
                     <FormControl required error={checkboxErr !== undefined} className="form-control" style={{ display: "block", marginBottom: "10px" }}>
                         <FormLabel component="legend">Gender</FormLabel>
                         <FormGroup className="form-control">
-                            <FormControlLabel label="Woman/female" control={<Checkbox onChange={(event) => {
+                            <FormControlLabel label="Female/woman" control={<Checkbox onChange={(event) => {
                                 check("female", event.target.checked);
                             }} />} />
-                            <FormControlLabel label="Man/male" control={<Checkbox onChange={(event) => {
+                            <FormControlLabel label="Male/man" control={<Checkbox onChange={(event) => {
                                 check("male", event.target.checked);
-                            }} />} />
-                            <FormControlLabel label="Transgender" control={<Checkbox onChange={(event) => {
-                                check("transgender", event.target.checked);
                             }} />} />
                             <FormControlLabel label="Nonbinary" control={<Checkbox onChange={(event) => {
                                 check("nonbinary", event.target.checked);
+                            }} />} />
+                            <FormControlLabel label="Transgender" control={<Checkbox onChange={(event) => {
+                                check("transgender", event.target.checked);
                             }} />} />
                             <FormControlLabel label="Not listed above" control={<Checkbox onChange={(event) => {
                                 let checked = event.target.checked;
@@ -377,10 +377,10 @@ function BetterCheckboxes() {
                     <FormControl required error={genderCheckboxErr !== undefined} className="form-control" style={{ display: "block", marginBottom: "10px" }}>
                         <FormLabel component="legend">Gender</FormLabel>
                         <FormGroup className="form-control">
-                            <FormControlLabel label="Woman/female" control={<Checkbox onChange={(event) => {
+                            <FormControlLabel label="Female/woman" control={<Checkbox onChange={(event) => {
                                 setGender("female", event.target.checked);
                             }} />} />
-                            <FormControlLabel label="Man/male" control={<Checkbox onChange={(event) => {
+                            <FormControlLabel label="Male/man" control={<Checkbox onChange={(event) => {
                                 setGender("male", event.target.checked);
                             }} />} />
                             <FormControlLabel label="Nonbinary" control={<Checkbox onChange={(event) => {
@@ -586,7 +586,7 @@ export default function Genders() {
                 <li>Who will this data be shared with (other users on a website, only healthcare providers, etc.), and how will they react to the data? Could it be used to help and/or harm the user?</li>
             </ul>
 
-            <p className="page-text">For example, a hospital may ask for a patient's gender on their input form, with the expectation that this will provide medically-relevant information. However, the underlying issue here is the assumption that gender is correlated in some way with anatomy, sex, or gender alignment.</p>
+            <p className="page-text">For example, a hospital may ask for a patient's gender on their input form, with the expectation that this will provide medically-relevant information. However, the underlying issue here is the assumption that gender implies a person's anatomy or sex, which is not necessarily the case.</p>
 
             <p className="page-text">If a form is attempting to use gender to seek medical information about a person's anatomy, it would be preferable to ask for anatomical information directly. If a form is asking for gender to know how to address someone, it would be preferable to instead prompt for someone's pronouns and/or preferred title.</p>
 

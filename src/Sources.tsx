@@ -7,10 +7,10 @@ export default function Sources() {
 
             <h3 className="page-header">Gender</h3>
             <ul className="page-text">
-                <li><Link href="https://dl.acm.org/doi/10.1145/3411764.3445742">Revisiting Gendered Web Forms: An Evaluation of Gender Inputs with (Non-)Binary People</Link> &mdash; TODO</li>
-                <li><Link href="https://dl.acm.org/doi/10.1145/3461778.3462033">”Why are they all obsessed with Gender?” &mdash; (Non)binary Navigations through Technological Infrastructures</Link> &mdash; TODO</li>
-                <li><Link href="https://journals.sagepub.com/doi/10.1177/2056305116672486">Baking Gender Into Social Media Design: How Platforms Shape Categories for Users and Advertisers</Link> &mdash; TODO</li>
-                <li><Link href="https://learning.oreilly.com/library/view/designing-ux-forms/9781457199912/">Designing UX: Forms</Link> &mdash; not publicly available, but free with an institution account. TODO</li>
+                <li><Link href="https://dl.acm.org/doi/10.1145/3411764.3445742">Revisiting Gendered Web Forms: An Evaluation of Gender Inputs with (Non-)Binary People</Link> &mdash; a study of reception to different forms for collecting gender, and recommendations on how to improve gender collection</li>
+                <li><Link href="https://dl.acm.org/doi/10.1145/3461778.3462033">”Why are they all obsessed with Gender?” &mdash; (Non)binary Navigations through Technological Infrastructures</Link> &mdash; an autoethnography of a non-binary individual navigating binary-gendered technological infrastructures, and suggestions on how to improve the state of gender in technology</li>
+                <li><Link href="https://journals.sagepub.com/doi/10.1177/2056305116672486">Baking Gender Into Social Media Design: How Platforms Shape Categories for Users and Advertisers</Link> &mdash; an analysis of how different social media platforms categorize gender, and the influence of social media over user categorization in general</li>
+                <li><Link href="https://learning.oreilly.com/library/view/designing-ux-forms/9781457199912/">Designing UX: Forms</Link> &mdash; not publicly available, but free with an institution account. A fantastic book on form design and user data collection, covering much more than just names and genders (though its coverage of both topics is excellent).</li>
             </ul>
 
             <h3 className="page-header">Names</h3>
